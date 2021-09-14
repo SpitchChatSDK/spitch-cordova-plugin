@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<plugin id="ru.webim.sdk" version="1.6.11" xmlns="http://www.phonegap.com/ns/plugins/1.0">
+
+    <name>WebimSDK</name>
+
+    <engines>
+        <engine name="cordova" version=">=3.4.0" />
+    </engines>
+
+    <asset src="www/webimsdk.js" target="js/webimsdk.js" />
+
+    <js-module name="webimsdk" src="www/webimsdk.js">
+        <clobbers target="webimsdk" />
+    </js-module>
+
+    <platform name="android">
+
+        <config-file parent="/*" target="res/xml/config.xml">
+            <feature name="WebimSDK">
+                <param name="android-package" value="ru.webim.plugin.WebimSDK" />
+            </feature>
+        </config-file>
+
+        <framework custom="true" src="webim.gradle" type="gradleReference" />
+        <source-file src="src/android/WebimSDK.java" target-dir="src/ru/webim/plugin/" />
+        <source-file src="src/android/models/Message.java"
+            target-dir="src/ru/webim/plugin/models" />
+        <source-file src="src/android/models/DialogState.java"
+            target-dir="src/ru/webim/plugin/models" />
+        <source-file src="src/android/models/Employee.java"
+            target-dir="src/ru/webim/plugin/models" />
+        <source-file src="src/android/models/Survey.java"
+            target-dir="src/ru/webim/plugin/models" />
+        <source-file src="src/android/models/SurveyConfig.java"
+            target-dir="src/ru/webim/plugin/models" />
+        <source-file src="src/android/models/SurveyCurrentQuestionInfo.java"
+            target-dir="src/ru/webim/plugin/models" />
+        <source-file src="src/android/models/SurveyQuestion.java"
+            target-dir="src/ru/webim/plugin/models" />
+    </platform>
+
+    <platform name="ios">
+
+        <config-file parent="/*" target="config.xml">
+            <feature name="WebimSDK">
+                <param name="ios-package" value="WebimSDK" />
+            </feature>
+        </config-file>
+        <dependency id="cordova-plugin-add-swift-support" version="~2.0.2"/>
+        <source-file src="src/ios/MimeType.swift" />
+        <source-file src="src/ios/WebimSDK.swift" />
+        <source-file src="src/ios/WebimClientLibrary/Department.swift" />
+        <source-file src="src/ios/WebimClientLibrary/FatalErrorHandler.swift" />
+        <source-file src="src/ios/WebimClientLibrary/Message.swift" />
+        <source-file src="src/ios/WebimClientLibrary/MessageListener.swift" />
+        <source-file src="src/ios/WebimClientLibrary/MessageStream.swift" />
+        <source-file src="src/ios/WebimClientLibrary/MessageTracker.swift" />
+        <source-file src="src/ios/WebimClientLibrary/Operator.swift" />
+        <source-file src="src/ios/WebimClientLibrary/ProvidedAuthorizationTokenStateListener.swift" />
+        <source-file src="src/ios/WebimClientLibrary/Survey.swift" />
+        <source-file src="src/ios/WebimClientLibrary/Webim.swift" />
+        <source-file src="src/ios/WebimClientLibrary/WebimClientLibrary.h" />
+        <source-file src="src/ios/WebimClientLibrary/WebimError.swift" />
+        <source-file src="src/ios/WebimClientLibrary/WebimLogger.swift" />
+        <source-file src="src/ios/WebimClientLibrary/WebimRemoteNotification.swift" />
+        <source-file src="src/ios/WebimClientLibrary/WebimSession.swift" />
+        <source-file src="src/ios/WebimClientLibrary/Implementation/DepartmentImpl.swift" />
+        <source-file src="src/ios/WebimClientLibrary/Implementation/LocationSettingsImpl.swift" />
+        <source-file src="src/ios/WebimClientLibrary/Implementation/MessageImpl.swift" />
+        <source-file src="src/ios/WebimClientLibrary/Implementation/MessageStreamImpl.swift" />
+        <source-file src="src/ios/WebimClientLibrary/Implementation/MessageTrackerImpl.swift" />
+        <source-file src="src/ios/WebimClientLibrary/Implementation/OperatorImpl.swift" />
+        <source-file src="src/ios/WebimClientLibrary/Implementation/SurveyImpl.swift" />
+        <source-file src="src/ios/WebimClientLibrary/Implementation/WebimErrorImpl.swift" />
+        <source-file src="src/ios/WebimClientLibrary/Implementation/WebimRemoteNotificationImpl.swift" />
+        <source-file src="src/ios/WebimClientLibrary/Implementation/WebimSessionImpl.swift" />
+        <source-file src="src/ios/WebimClientLibrary/Backend/AbstractRequestLoop.swift" />
+        <source-file src="src/ios/WebimClientLibrary/Backend/AccessChecker.swift" />
+        <source-file src="src/ios/WebimClientLibrary/Backend/ActionRequestLoop.swift" />
+        <source-file src="src/ios/WebimClientLibrary/Backend/AuthorizationData.swift" />
+        <source-file src="src/ios/WebimClientLibrary/Backend/ClientSideID.swift" />
+        <source-file src="src/ios/WebimClientLibrary/Backend/DeltaCallback.swift" />
+        <source-file src="src/ios/WebimClientLibrary/Backend/DeltaRequestLoop.swift" />
+        <source-file src="src/ios/WebimClientLibrary/Backend/ExecIfNotDestroyedHandlerExecutor.swift" />
+        <source-file src="src/ios/WebimClientLibrary/Backend/HistoryID.swift" />
+        <source-file src="src/ios/WebimClientLibrary/Backend/HistoryMetaInformationStorage.swift" />
+        <source-file src="src/ios/WebimClientLibrary/Backend/HistoryStorage.swift" />
+        <source-file src="src/ios/WebimClientLibrary/Backend/InternalErrorListener.swift" />
+        <source-file src="src/ios/WebimClientLibrary/Backend/LocationSettingsHolder.swift" />
+        <source-file src="src/ios/WebimClientLibrary/Backend/MemoryHistoryMetaInformationStorage.swift" />
+        <source-file src="src/ios/WebimClientLibrary/Backend/MemoryHistoryStorage.swift" />
+        <source-file src="src/ios/WebimClientLibrary/Backend/MessageComposingHandler.swift" />
+        <source-file src="src/ios/WebimClientLibrary/Backend/MessageHolder.swift" />
+        <source-file src="src/ios/WebimClientLibrary/Backend/MessageToSend.swift" />
+        <source-file src="src/ios/WebimClientLibrary/Backend/ProvidedVisitorFields.swift" />
+        <source-file src="src/ios/WebimClientLibrary/Backend/RemoteHistoryProvider.swift" />
+        <source-file src="src/ios/WebimClientLibrary/Backend/SessionDestroyer.swift" />
+        <source-file src="src/ios/WebimClientLibrary/Backend/SessionParametersListener.swift" />
+        <source-file src="src/ios/WebimClientLibrary/Backend/SQLiteHistoryStorage.swift" />
+        <source-file src="src/ios/WebimClientLibrary/Backend/SurveyController.swift" />
+        <source-file src="src/ios/WebimClientLibrary/Backend/WebimActions.swift" />
+        <source-file src="src/ios/WebimClientLibrary/Backend/WebimClient.swift" />
+        <source-file src="src/ios/WebimClientLibrary/Backend/WebimInternalError.swift" />
+        <source-file src="src/ios/WebimClientLibrary/Backend/WebimInternalLogger.swift" />
+        <source-file src="src/ios/WebimClientLibrary/Backend/WebimRequest.swift" />
+        <source-file src="src/ios/WebimClientLibrary/Backend/Utilities/CompletionHandlerWrappers.swift" />
+        <source-file src="src/ios/WebimClientLibrary/Backend/Utilities/DepartmentFactory.swift" />
+        <source-file src="src/ios/WebimClientLibrary/Backend/Utilities/InternalUtils.swift" />
+        <source-file src="src/ios/WebimClientLibrary/Backend/Utilities/MessageFactories.swift" />
+        <source-file src="src/ios/WebimClientLibrary/Backend/Utilities/OperatorFactory.swift" />
+        <source-file src="src/ios/WebimClientLibrary/Backend/Utilities/SendSurveyAnswerCompletionHandlerWrapper.swift" />
+        <source-file src="src/ios/WebimClientLibrary/Backend/Utilities/SurveyFactory.swift" />
+        <source-file src="src/ios/WebimClientLibrary/Backend/Utilities/Extensions/Array.swift" />
+        <source-file src="src/ios/WebimClientLibrary/Backend/Utilities/Extensions/Collection.swift" />
+        <source-file src="src/ios/WebimClientLibrary/Backend/Utilities/Extensions/Dictionary.swift" />
+        <source-file src="src/ios/WebimClientLibrary/Backend/Utilities/Extensions/Int.swift" />
+        <source-file src="src/ios/WebimClientLibrary/Backend/Utilities/Extensions/String.swift" />
+        <source-file src="src/ios/WebimClientLibrary/Backend/Utilities/Extensions/UIColor.swift" />
+        <source-file src="src/ios/WebimClientLibrary/Backend/Utilities/Extensions/UInt32.swift" />
+        <source-file src="src/ios/WebimClientLibrary/Backend/Items/ChatItem.swift" />
+        <source-file src="src/ios/WebimClientLibrary/Backend/Items/DepartmentItem.swift" />
+        <source-file src="src/ios/WebimClientLibrary/Backend/Items/FileParametersItem.swift" />
+        <source-file src="src/ios/WebimClientLibrary/Backend/Items/MessageItem.swift" />
+        <source-file src="src/ios/WebimClientLibrary/Backend/Items/OnlineStatusItem.swift" />
+        <source-file src="src/ios/WebimClientLibrary/Backend/Items/OperatorItem.swift" />
+        <source-file src="src/ios/WebimClientLibrary/Backend/Items/RatingItem.swift" />
+        <source-file src="src/ios/WebimClientLibrary/Backend/Items/SurveyItem.swift" />
+        <source-file src="src/ios/WebimClientLibrary/Backend/Items/VisitorItem.swift" />
+        <source-file src="src/ios/WebimClientLibrary/Backend/Items/VisitSessionStateItem.swift" />
+        <source-file src="src/ios/WebimClientLibrary/Backend/Items/Deltas/DeltaItem.swift" />
+        <source-file src="src/ios/WebimClientLibrary/Backend/Items/Deltas/FullUpdate.swift" />
+        <source-file src="src/ios/WebimClientLibrary/Backend/Items/Responses/DeltaResponse.swift" />
+        <source-file src="src/ios/WebimClientLibrary/Backend/Items/Responses/HistoryBeforeResponse.swift" />
+        <source-file src="src/ios/WebimClientLibrary/Backend/Items/Responses/HistorySinceResponse.swift" />
+        <source-file src="src/ios/WebimClientLibrary/SQLite/Foundation.swift" />
+        <source-file src="src/ios/WebimClientLibrary/SQLite/Helpers.swift" />
+        <source-file src="src/ios/WebimClientLibrary/SQLite/Core/Blob.swift" />
+        <source-file src="src/ios/WebimClientLibrary/SQLite/Core/Connection.swift" />
+        <source-file src="src/ios/WebimClientLibrary/SQLite/Core/Errors.swift" />
+        <source-file src="src/ios/WebimClientLibrary/SQLite/Core/Statement.swift" />
+        <source-file src="src/ios/WebimClientLibrary/SQLite/Core/Value.swift" />
+        <source-file src="src/ios/WebimClientLibrary/SQLite/Extensions/Cipher.swift" />
+        <source-file src="src/ios/WebimClientLibrary/SQLite/Extensions/FTS4.swift" />
+        <source-file src="src/ios/WebimClientLibrary/SQLite/Extensions/FTS5.swift" />
+        <source-file src="src/ios/WebimClientLibrary/SQLite/Extensions/RTree.swift" />
+        <source-file src="src/ios/WebimClientLibrary/SQLite/Typed/AggregateFunctions.swift" />
+        <source-file src="src/ios/WebimClientLibrary/SQLite/Typed/Coding.swift" />
+        <source-file src="src/ios/WebimClientLibrary/SQLite/Typed/Collation.swift" />
+        <source-file src="src/ios/WebimClientLibrary/SQLite/Typed/CoreFunctions.swift" />
+        <source-file src="src/ios/WebimClientLibrary/SQLite/Typed/CustomFunctions.swift" />
+        <source-file src="src/ios/WebimClientLibrary/SQLite/Typed/DateAndTimeFunctions.swift" />
+        <source-file src="src/ios/WebimClientLibrary/SQLite/Typed/Expression.swift" />
+        <source-file src="src/ios/WebimClientLibrary/SQLite/Typed/Operators.swift" />
+        <source-file src="src/ios/WebimClientLibrary/SQLite/Typed/Query.swift" />
+        <source-file src="src/ios/WebimClientLibrary/SQLite/Typed/Schema.swift" />
+        <source-file src="src/ios/WebimClientLibrary/SQLite/Typed/Setter.swift" />
+        <source-file src="src/ios/WebimClientLibrary/SQLiteObjc/fts3_tokenizer.h" />
+        <source-file src="src/ios/WebimClientLibrary/SQLiteObjc/SQLite-Bridging.m" />
+        <source-file src="src/ios/WebimClientLibrary/SQLiteObjc/include/SQLite-Bridging.h" />
+
+    </platform>
+
+</plugin>

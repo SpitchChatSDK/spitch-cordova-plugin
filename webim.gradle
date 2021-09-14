@@ -1,0 +1,13 @@
+android {
+    packagingOptions {
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/NOTICE'
+    }
+}
+
+dependencies {
+    implementation "ru.webim.sdk:webimclientsdkandroid:3.36.10"
+    repositories {
+        mavenCentral()
+    }
+}
