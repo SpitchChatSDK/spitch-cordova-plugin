@@ -1,0 +1,20 @@
+{
+  "name": "webim-cordova-plugin",
+  "version": "1.6.11",
+  "description": "Webim SDK",
+  "cordova": {
+    "id": "webim-cordova-plugin",
+    "platforms": [
+      "android",
+      "ios"
+    ]
+  },
+  "keywords": [
+    "cordova",
+    "plugin",
+    "webim",
+    "ecosystem:cordova"
+  ],
+  "author": "Webim.ru Inc",
+  "license": "Apache-2"
+}
